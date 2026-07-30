@@ -1,0 +1,43 @@
+{
+  "name": "media-kit",
+  "version": "1.0.0",
+  "description": "Standalone media download toolkit — video/audio from 1800+ platforms via yt-dlp + Chrome CDP",
+  "type": "module",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    }
+  },
+  "bin": {
+    "media-kit-mcp": "./bin/media-kit-mcp.js"
+  },
+  "files": [
+    "dist",
+    "bin"
+  ],
+  "scripts": {
+    "build": "tsdown",
+    "prepublishOnly": "npm run build"
+  },
+  "devDependencies": {
+    "tsdown": "^0.12.0",
+    "typescript": "^5.7.0"
+  },
+  "keywords": [
+    "media",
+    "video",
+    "download",
+    "yt-dlp",
+    "douyin",
+    "tiktok",
+    "cdp",
+    "ffmpeg"
+  ],
+  "license": "MIT",
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.30.0"
+  }
+}
