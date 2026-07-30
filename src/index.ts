@@ -239,6 +239,7 @@ export { videoDlDownload } from "./videodl-tool.js";
 export { ytdlpDownload } from "./ytdlp-tool.js";
 export { cdpScrape, cdpScrapePage } from "./cdp-scrape-tool.js";
 export { compressIfNeeded } from "./compressor.js";
+export { cdpScreenshot } from "./cdp-screenshot.js";
 export { isChineseVideoDomain, isCdpFirstDomain, extractDomain } from "./domain-utils.js";
 export { resolveBin } from "./resolve-bin.js";
 export { transcribeAudio } from "./transcribe.js";
