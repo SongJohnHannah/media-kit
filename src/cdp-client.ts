@@ -49,6 +49,11 @@ function findChromeExe(config?: MediaKitConfig): string | null {
   }
   // 3. Known locations (Windows Chrome first for WSL2 login sessions)
   const candidates = [
+    // Windows (native)
+    "C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe",
+    "C:\\Program Files (x86)\\Google\\Chrome\\Application\\chrome.exe",
+    "C:\\Program Files\\Microsoft\\Edge\\Application\\msedge.exe",
+    "C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedge.exe",
     // Windows (WSL2)
     "/mnt/c/Program Files/Google/Chrome/Application/chrome.exe",
     "/mnt/c/Program Files (x86)/Google/Chrome/Application/chrome.exe",
@@ -81,7 +86,7 @@ function findChromeExe(config?: MediaKitConfig): string | null {
 }
 
 function isWindowsChromePath(chromePath: string): boolean {
-  return chromePath.startsWith("/mnt/");
+  return chromePath.startsWith("/mnt/") || /^[A-Za-z]:[\\/]/.test(chromePath);
 }
 
 function resolveChromeUserDataDir(config?: MediaKitConfig): string {
